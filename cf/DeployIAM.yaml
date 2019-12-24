@@ -29,6 +29,8 @@ Resources:
                  Action:
                    - 'lambda:CreateFunction'
                    - 'lambda:DeleteFunction'
+                   - 'lambda:UpdateFunctionConfiguration'
+                   - 'lambda:UpdateFunctionCode'
 
                    # old api
                    - 'lambda:UploadFunction'
