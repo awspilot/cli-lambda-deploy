@@ -1,29 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
 Resources:
-    DeployIAMUser:
-      Type: AWS::IAM::User
-      Properties:
-        Path: /
-        UserName: cli-lambda-deploy
-        Policies:
-        - PolicyName: LambdaDeploy
-          PolicyDocument:
-            Version: 2012-10-17
-            Statement:
-               - Effect: Allow
-                 # Sid: uploadFunctiononTestFunctions
-                 Action:
-                   - 'lambda:UploadFunction'
-                 Resource:
-                    - '*'
-                    # - '*'
-    DeployIAMKey:
-      Type: AWS::IAM::AccessKey
-      Properties:
-        UserName:
-          !Ref DeployIAMUser
-
-
     TestRole:
         Type: AWS::IAM::Role
         Properties:
@@ -37,6 +13,35 @@ Resources:
           ManagedPolicyArns:
           - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 
+    DeployIAMUser:
+      Type: AWS::IAM::User
+      DependsOn: [ TestRole ]
+      Properties:
+        Path: /
+        UserName: cli-lambda-deploy
+        Policies:
+        - PolicyName: LambdaDeploy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+               - Effect: Allow
+                 # Sid: uploadFunctiononTestFunctions
+                 Action:
+                   - 'lambda:UploadFunction'
+                 Resource:
+                    # - '*'
+                    - !Sub 'arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:new-function'
+               - Effect: Allow
+                 Action:
+                   - 'iam:GetRole'
+                   - 'iam:PassRole'
+                 Resource: !GetAtt TestRole.Arn
+
+    DeployIAMKey:
+      Type: AWS::IAM::AccessKey
+      Properties:
+        UserName:
+          !Ref DeployIAMUser
 
 Outputs:
     AccessKeyId:
