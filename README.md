@@ -2,7 +2,12 @@
 [![npm page](https://nodei.co/npm/aws-lambda.png?downloads=true)](https://www.npmjs.com/package/aws-lambda)
 
 # cli-lambda-deploy
-Command line tool deploy code to [AWS Lambda](http://aws.amazon.com/lambda/).
+Command line tool deploy code to [AWS Lambda](http://aws.amazon.com/lambda/).  
+
+[![Downloads](https://img.shields.io/npm/dm/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
+[![Downloads](https://img.shields.io/npm/dy/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
+[![Downloads](https://img.shields.io/npm/dt/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
+
 
 ## Installation
 
