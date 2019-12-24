@@ -22,6 +22,22 @@ Resources:
       Properties:
         UserName:
           !Ref DeployIAMUser
+
+
+    TestRole:
+        Type: AWS::IAM::Role
+        Properties:
+          AssumeRolePolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Principal: {Service: [lambda.amazonaws.com]}
+              Action: ['sts:AssumeRole']
+          Path: /
+          ManagedPolicyArns:
+          - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+
+
 Outputs:
     AccessKeyId:
         Value: !Ref DeployIAMKey
@@ -31,3 +47,7 @@ Outputs:
         Value: !GetAtt DeployIAMKey.SecretAccessKey
         Export:
             Name: SecretAccessKey
+    RoleArn:
+        Value: !GetAtt TestRole.Arn
+        Export:
+            Name: RoleArn
