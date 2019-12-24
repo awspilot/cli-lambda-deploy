@@ -28,6 +28,7 @@ Resources:
                  # Sid: uploadFunctiononTestFunctions
                  Action:
                    - 'lambda:UploadFunction'
+                   - 'lambda:DeleteFunction'
                  Resource:
                     # - '*'
                     - !Sub 'arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:new-function'
