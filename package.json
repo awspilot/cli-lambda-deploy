@@ -1,5 +1,6 @@
 {
 	"version": "0.1.2",
+	"license": "MIT",
 	"author": {
 		"name": "Adrian Praja",
 		"email": "adrian@databank.io",
@@ -28,7 +29,13 @@
 		"commander": "^2.5.0",
 		"dotenv": "^0.4.0"
 	},
+
+
+
 	"devDependencies": {
 		"mocha": "5.2.0"
-	}
+	},
+	"scripts": {
+		"test": "mocha --timeout 100000 -S -R spec --exit"
+	},
 }
