@@ -1,11 +1,11 @@
 {
 	"PATH": "./new-function",
-	"AWS_KEY": { "Ref" : "env.AWS_ACCESS_KEY_ID" },
-    "AWS_SECRET": { "Ref" : "env.AWS_SECRET_ACCESS_KEY"},
+	"AWS_KEY": { "Ref" : "env.lambda_deploy_aws_key" },
+    "AWS_SECRET": { "Ref" : "env.lambda_deploy_aws_secret"},
     "AWS_REGION": "eu-central-1",
 
     "FunctionName": "new-function",
-	"Role": { "Ref" : "env.test_role"},
+	"Role": "arn:aws:iam::452980636694:role/CliLambdaDeploy-TestRole-1H89NZ845HHBK",
     "Runtime": "nodejs8.10",
     "Handler": "index.handler",
     "MemorySize": "128",
