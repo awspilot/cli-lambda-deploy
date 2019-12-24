@@ -43,7 +43,7 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 
 	"FunctionName": "test-lambda",
 	"Role": "your_amazon_role",
-	"Runtime": "nodejs",
+	"Runtime": "nodejs10.x",
 	"Handler": "index.handler",
 	"MemorySize": "128",
 	"Timeout": "3",
