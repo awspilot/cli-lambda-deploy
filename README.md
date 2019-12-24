@@ -30,7 +30,14 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 // PATH must point to your code folder and is relative to the .lambda file
 // PATH can be relative or absolute
 // If not set, Runtime defaults to "nodejs"
-// Possible Runtime values: java8, nodejs, nodejs4.3, python2.7
+// Possible Runtime values:
+//		nodejs8.10 | nodejs10.x | nodejs12.x
+//		java8 | java11
+//		python2.7 | python3.6 | python3.7 | python3.8
+//		dotnetcore1.0 | dotnetcore2.0 | dotnetcore2.1
+//		go1.x
+//		ruby2.5
+//		provided
 // If not set, FunctionName defaults to the name of the config file without extension ("my-function" in this case)
 
 // Sample contents of my-function.lambda
