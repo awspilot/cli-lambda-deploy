@@ -27,8 +27,11 @@ Resources:
                - Effect: Allow
                  # Sid: uploadFunctiononTestFunctions
                  Action:
-                   - 'lambda:UploadFunction'
+                   - 'lambda:CreateFunction'
                    - 'lambda:DeleteFunction'
+
+                   # old api
+                   - 'lambda:UploadFunction'
                  Resource:
                     # - '*'
                     - !Sub 'arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:new-function'
