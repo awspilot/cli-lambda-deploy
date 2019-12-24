@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+    - "4"
+    - "5"
+    - "6"
+    - "7"
+    - "8"
+    - "9"
+    - "10"
+    - "12"
+
+cache:
+  npm: false
+
+env:
+  global:
+    # lambda_deploy_aws_key
+    secure: DaeZSCFWhV2BkgAi5hrjtDbDgbZgO2GwGkNezZ/N6Y5f8sFhhiI5Wfj7yaPu3U/wvws6Yyt3BHZdMeqbI4qbefGb111kCivXyPKQf2uOCmY9NAUkXtwj2sBENyIlYIcAJZVDqtIZ5CshO/IZegLEgtO51RT8lj0lC7aFJDpIjrPsrLXstt3csEcNq4rjm/laC/GHVNA6ODRplrdmSHwU+sSHlCPl/hINI4P+WwtepblnopE166ljqC6K0E+qTV+8PgZ0rTpmTTwbawn4GbGJiSNNS60D3vqYC25cRMoC4xPtQ78mQ3bOGZAP9R71HgbsK2HkDjWcFFvtSBcaleo1/SQj5QIh2JqGu18UFwiJg15WsKWwIvxOWZiLjWeZdl6RYgh77b49DNKRsFXBSbYyxx6QjVZA7bvCQHZ+UZhNnqWlpdEEauqB9ip8HReXaFHrHWCZKbmnNU0Wpj0TEOGUC4h0PPdc8eJ8vjSgjvUMb/2G+GVJGBoBml2m44Jw4ui1bL2tvPInAlfsT9r8iQlRTsRZKSNW4bbf6SthwnNF3j55ZxvONgDji8ivRpbcvYFCqTPe8LryaLHJUl0UK8V6KbfpOv4SgOj/LITxB21uf0A7T6mnArKTpDZQMLpIYHJOK8kjMqxGMStWVNl4rOHObnebq95Alawrw8OVxilQKBI=
