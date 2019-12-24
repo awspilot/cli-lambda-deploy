@@ -1,4 +1,5 @@
 {
+	"version": "0.1.2",
 	"author": {
 		"name": "Adrian Praja",
 		"email": "adrian@databank.io",
@@ -12,11 +13,10 @@
 		"deploy",
 		"deploy lambda"
 	],
-	"version": "0.1.2",
 	"homepage": "https://github.com/awspilot/cli-lambda-deploy",
 	"bugs": "https://github.com/awspilot/cli-lambda-deploy/issues",
 	"repository": {
-		"type" :  "git",
+		"type":  "git",
 		"url": "https://github.com/awspilot/cli-lambda-deploy"
 	},
 	"main": "lib/main.js",
@@ -27,5 +27,8 @@
 		"aws-sdk": "^*",
 		"commander": "^2.5.0",
 		"dotenv": "^0.4.0"
+	},
+	"devDependencies": {
+		"mocha": "5.2.0"
 	}
 }
