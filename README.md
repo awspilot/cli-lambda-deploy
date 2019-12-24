@@ -1,5 +1,4 @@
 
-[![npm page](https://nodei.co/npm/aws-lambda.png?downloads=true)](https://www.npmjs.com/package/aws-lambda)
 
 # cli-lambda-deploy
 Command line tool deploy code to [AWS Lambda](http://aws.amazon.com/lambda/).  
