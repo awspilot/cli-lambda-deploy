@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var 
+var
 dotenv = require( "dotenv" ),
 lambda = require( "../lib/main.js" ),
 program = require( "commander" );
@@ -14,5 +14,13 @@ program
   .action( function( prg, options ) {
 	lambda.deploy( prg );
   } );
+
+program
+	.usage('delete <file>')
+	.command( "delete <file>" )
+	.description( "Delete Function" )
+	.action( function( prg ) {
+		lambda.delete( prg );
+	});
 
 program.parse( process.argv );
