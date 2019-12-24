@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+    DeployIAMUser:
+      Type: AWS::IAM::User
+      Properties:
+        Path: /
+        UserName: cli-lambda-deploy
+        Policies:
+        - PolicyName: LambdaDeploy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+               - Effect: Allow
+                 # Sid: uploadFunctiononTestFunctions
+                 Action:
+                   - 'lambda:UploadFunction'
+                 Resource:
+                    - '*'
+                    # - '*'
+    DeployIAMKey:
+      Type: AWS::IAM::AccessKey
+      Properties:
+        UserName:
+          !Ref DeployIAMUser
+Outputs:
+    AccessKeyId:
+        Value: !Ref DeployIAMKey
+        Export:
+            Name: AccessKeyId
+    SecretAccessKey:
+        Value: !GetAtt DeployIAMKey.SecretAccessKey
+        Export:
+            Name: SecretAccessKey
