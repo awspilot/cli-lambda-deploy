@@ -31,6 +31,7 @@ Resources:
                    - 'lambda:DeleteFunction'
                    - 'lambda:UpdateFunctionConfiguration'
                    - 'lambda:UpdateFunctionCode'
+                   - 'lambda:InvokeFunction'
 
                    # old api
                    - 'lambda:UploadFunction'
