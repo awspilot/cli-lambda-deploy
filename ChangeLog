@@ -1,0 +1,9 @@
+1.0.0
+- uses 2015-03-31 api version ( latest in dec.2019 )
+- support for yaml
+- support for Lambda Environmemnt Variables
+- support for Lambda Layers
+- npm tests against AWS Lambda
+
+0.1.2
+- uses 2014-11-11 deprecated api
