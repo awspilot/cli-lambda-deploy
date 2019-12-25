@@ -39,7 +39,7 @@ describe('lambda deploy new-function', function () {
 	})
 
 	it('delete new-function', function(done) {
-		exec( 'node', ['./bin/lambda', 'delete', './test/res/new-function.lambda'] , function( err, data ) {
+		exec( 'node', ['./bin/lambda', 'delete', './test/res/new-function-' + process.version.split('.')[0] + '.lambda'] , function( err, data ) {
 			if (err)
 				throw 'process exit code ' + err.code;
 
