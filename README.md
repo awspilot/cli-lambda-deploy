@@ -63,9 +63,10 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 }
 ```
 
-You can also use yaml content
+You can also use yaml content,
 ```
 # unlike json, comments are allowed in yaml, yey!
+# remember to use spaces not tabs 😞
 PATH: ./new-function
 AWS_KEY:  !Ref "env.lambda_deploy_aws_key"
 AWS_SECRET: !Ref "env.lambda_deploy_aws_secret"
@@ -78,9 +79,9 @@ Handler: "index.handler"
 MemorySize: "128"
 Timeout: "3"
 Environment:
-	Variables:
-		Hello: "World"
+    Variables:
+        Hello: "World"
 Layers:
-	- "arn:aws:lambda:eu-central-1:452980636694:layer:awspilot-dynamodb-2_0_0-beta:1"
+    - "arn:aws:lambda:eu-central-1:452980636694:layer:awspilot-dynamodb-2_0_0-beta:1"
 Description: ""
 ```
