@@ -4,7 +4,7 @@
     "AWS_SECRET": { "Ref" : "env.lambda_deploy_aws_secret"},
     "AWS_REGION": "eu-central-1",
 
-    "FunctionName": "new-function",
+    "FunctionName": "new-function-v10",
 	"Role": "arn:aws:iam::452980636694:role/CliLambdaDeploy-TestRole-1H89NZ845HHBK",
     "Runtime": "nodejs8.10",
     "Handler": "index.handler",
