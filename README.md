@@ -15,6 +15,9 @@ Command line tool deploy code to [AWS Lambda](http://aws.amazon.com/lambda/).
 npm install -g aws-lambda
 ```
 
+WARN: upgrading to v1.0.0 will remove your function environment and layers if they are not defined in the config file  
+
+
 ## Usage
 
 ```
