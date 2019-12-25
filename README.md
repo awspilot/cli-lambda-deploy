@@ -51,6 +51,9 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 	"Handler": "index.handler",
 	"MemorySize": "128",
 	"Timeout": "3",
+	"Layers": [
+		"arn:aws:lambda:eu-central-1:452980636694:layer:awspilot-dynamodb-2_0_0-beta:1"
+	],
 	"Description": ""
 }
 ```
@@ -69,5 +72,7 @@ Runtime: "nodejs8.10"
 Handler: "index.handler"
 MemorySize: "128"
 Timeout: "3"
+Layers:
+	- "arn:aws:lambda:eu-central-1:452980636694:layer:awspilot-dynamodb-2_0_0-beta:1"
 Description: ""
 ```
