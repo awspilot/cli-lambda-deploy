@@ -37,7 +37,7 @@ Resources:
                    - 'lambda:UploadFunction'
                  Resource:
                     # - '*'
-                    - !Sub 'arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:new-function'
+                    - !Sub 'arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:new-function-v*'
                - Effect: Allow
                  Action:
                    - 'iam:GetRole'
