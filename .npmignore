@@ -1,2 +1,5 @@
+node_modules/
 test/
 cf/
+ChangeLog
+.travis.yml
