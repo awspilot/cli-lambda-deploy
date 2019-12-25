@@ -3,3 +3,4 @@ test/
 cf/
 ChangeLog
 .travis.yml
+.env
