@@ -29,6 +29,15 @@ describe('lambda deploy new-function', function () {
 		})
 	})
 
+	it('invoke new-function', function(done) {
+		exec( 'node', ['./bin/lambda', 'invoke', './test/res/new-function.lambda'] , function( err, data ) {
+			if (err)
+				throw 'process exit code ' + err.code;
+
+			done()
+		})
+	})
+
 	it('delete new-function', function(done) {
 		exec( 'node', ['./bin/lambda', 'delete', './test/res/new-function.lambda'] , function( err, data ) {
 			if (err)
