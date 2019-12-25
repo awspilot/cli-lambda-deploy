@@ -1,5 +1,5 @@
 
-describe('lambda deploy new-function', function () {
+describe('new-function YAML config', function () {
 
 
 	it('delete non existing function', function(done) {
