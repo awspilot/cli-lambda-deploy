@@ -1,5 +1,5 @@
 
-console.log("test version", process.version ) 
+console.log("test version", process.version )
 exec = function( cmd, params, cb ) {
 	var spawn = require('child_process').spawn;
 	var prc = spawn( cmd,  params );
@@ -20,3 +20,4 @@ exec = function( cmd, params, cb ) {
 }
 
 require("./tests/000-new-function-json")
+require("./tests/000-new-function-yaml")
