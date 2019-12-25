@@ -21,7 +21,7 @@ describe('lambda deploy new-function', function () {
 	})
 
 	it('create(existing) new-function', function(done) {
-		exec( 'node', ['./bin/lambda', 'deploy', './test/res/new-function-json' + process.version.split('.')[0] + '.lambda'] , function( err, data ) {
+		exec( 'node', ['./bin/lambda', 'deploy', './test/res/new-function-json-' + process.version.split('.')[0] + '.lambda'] , function( err, data ) {
 			if (err)
 				throw 'process exit code ' + err.code;
 
@@ -30,7 +30,7 @@ describe('lambda deploy new-function', function () {
 	})
 
 	it('invoke new-function', function(done) {
-		exec( 'node', ['./bin/lambda', 'invoke', './test/res/new-function-json' + process.version.split('.')[0] + '.lambda'] , function( err, data ) {
+		exec( 'node', ['./bin/lambda', 'invoke', './test/res/new-function-json-' + process.version.split('.')[0] + '.lambda'] , function( err, data ) {
 			if (err)
 				throw 'process exit code ' + err.code;
 
@@ -39,7 +39,7 @@ describe('lambda deploy new-function', function () {
 	})
 
 	it('delete new-function', function(done) {
-		exec( 'node', ['./bin/lambda', 'delete', './test/res/new-function-json' + process.version.split('.')[0] + '.lambda'] , function( err, data ) {
+		exec( 'node', ['./bin/lambda', 'delete', './test/res/new-function-json-' + process.version.split('.')[0] + '.lambda'] , function( err, data ) {
 			if (err)
 				throw 'process exit code ' + err.code;
 
