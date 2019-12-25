@@ -25,28 +25,24 @@ lambda deploy /path/to/my-function.lambda
 node_modules/.bin/lambda /path/to/my-function.lambda
 ```
 
-## Configuration File
+## Sample .lambda file
+
+PATH must point to your code folder and is relative to the .lambda file  
+PATH can be relative or absolute  
+If not set, Runtime defaults to "nodejs10.x  
+If not set, FunctionName defaults to the name of the config file without extension ("my-function" in this case)  
+You can use *Ref* to reference environment variables in the form of env.YOUR_ENVIRONMENT_NAME  
+`lambda deploy <file.lambda>` credentials needs permissions to *CreateFunction*, *UpdateFunctionConfiguration* and *UpdateFunctionCode*  
+`lambda delete <file.lambda>` credentials needs permissions to *DeleteFunction*  
+`lambda invoke <file.lambda>` credentials needs permissions to *InvokeFunction*  
+
 
 ```
-// PATH must point to your code folder and is relative to the .lambda file
-// PATH can be relative or absolute
-// If not set, Runtime defaults to "nodejs"
-// Possible Runtime values:
-//		nodejs8.10 | nodejs10.x | nodejs12.x
-//		java8 | java11
-//		python2.7 | python3.6 | python3.7 | python3.8
-//		dotnetcore1.0 | dotnetcore2.0 | dotnetcore2.1
-//		go1.x
-//		ruby2.5
-//		provided
-// If not set, FunctionName defaults to the name of the config file without extension ("my-function" in this case)
-
 // Sample contents of my-function.lambda
-
 {
 	"PATH": "./test-function",
-	"AWS_KEY": "your_key",
-	"AWS_SECRET": "your_secret",
+	"AWS_KEY": { "Ref" : "env.AWS_ACCESS_KEY_ID" },,
+	"AWS_SECRET": { "Ref" : "env.AWS_SECRET_ACCESS_KEY"},
 	"AWS_REGION": "us-east-1",
 
 	"FunctionName": "test-lambda",
@@ -57,4 +53,21 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 	"Timeout": "3",
 	"Description": ""
 }
+```
+
+You can also use yaml content
+```
+# unlike json, comments are allowed in yaml, yey!
+PATH: ./new-function
+AWS_KEY:  !Ref "env.lambda_deploy_aws_key"
+AWS_SECRET: !Ref "env.lambda_deploy_aws_secret"
+AWS_REGION: "eu-central-1"
+
+FunctionName: new-function-v12
+Role: "arn:aws:iam::452980636694:role/CliLambdaDeploy-TestRole-1H89NZ845HHBK"
+Runtime: "nodejs8.10"
+Handler: "index.handler"
+MemorySize: "128"
+Timeout: "3"
+Description: ""
 ```
