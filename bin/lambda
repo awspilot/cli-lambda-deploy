@@ -23,4 +23,12 @@ program
 		lambda.delete( prg );
 	});
 
+program
+	.usage('invoke <file>')
+	.command( "invoke <file>" )
+	.description( "Invoke Function" )
+	.action( function( prg ) {
+		lambda.invoke( prg );
+	});
+
 program.parse( process.argv );
