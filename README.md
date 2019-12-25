@@ -27,14 +27,14 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 
 ## Sample .lambda file
 
-PATH must point to your code folder and is relative to the .lambda file  
-PATH can be relative or absolute  
-If not set, Runtime defaults to "nodejs10.x  
-If not set, FunctionName defaults to the name of the config file without extension ("my-function" in this case)  
-You can use *Ref* to reference environment variables in the form of env.YOUR_ENVIRONMENT_NAME  
-`lambda deploy <file.lambda>` credentials needs permissions to *CreateFunction*, *UpdateFunctionConfiguration* and *UpdateFunctionCode*  
-`lambda delete <file.lambda>` credentials needs permissions to *DeleteFunction*  
-`lambda invoke <file.lambda>` credentials needs permissions to *InvokeFunction*  
+ * PATH must point to your code folder and is relative to the .lambda file  
+ * PATH can be relative or absolute  
+ * If not set, Runtime defaults to **nodejs10.x**  
+ * If not set, FunctionName defaults to the name of the config file without extension ("my-function" in this case)  
+ * You can use **Ref** to reference environment variables in the form of env.YOUR_ENVIRONMENT_NAME  
+ * `lambda deploy <file.lambda>` credentials needs permissions to **CreateFunction**, **UpdateFunctionConfiguration** and **UpdateFunctionCode**  
+ * `lambda delete <file.lambda>` credentials needs permissions to **DeleteFunction**  
+ * `lambda invoke <file.lambda>` credentials needs permissions to **InvokeFunction**  
 
 
 ```
