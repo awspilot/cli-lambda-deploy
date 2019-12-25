@@ -1,4 +1,4 @@
-
+# unlike json, comments are allowed in yaml, yey!
 PATH: ./new-function
 AWS_KEY:  !Ref "env.lambda_deploy_aws_key"
 AWS_SECRET: !Ref "env.lambda_deploy_aws_secret"
