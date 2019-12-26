@@ -1,5 +1,5 @@
 {
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "MIT",
 	"author": {
 		"name": "Adrian Praja",
@@ -14,7 +14,7 @@
 		"deploy",
 		"deploy lambda"
 	],
-	"homepage": "https://github.com/awspilot/cli-lambda-deploy",
+	"homepage": "https://awspilot.dev",
 	"bugs": "https://github.com/awspilot/cli-lambda-deploy/issues",
 	"repository": {
 		"type":  "git",
