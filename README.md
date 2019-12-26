@@ -17,31 +17,22 @@ npm install -g aws-lambda
 
 WARN: upgrading to v1.0.0 will remove your function environment and layers if they are not defined in the config file  
 
+## Config file
 
-## Usage
+* PATH must point to your code folder and is relative to the config file  
+* PATH can be relative or absolute  
+* If not set, Runtime defaults to **nodejs10.x**  
+* If not set, FunctionName defaults to the name of the config file ("my-function" in this case)  
+* You can use **Ref** to reference environment variables in the form of env.YOUR_ENVIRONMENT_NAME  
+* `lambda deploy <file.lambda>` credentials needs permissions to **CreateFunction**, **UpdateFunctionConfiguration** and **UpdateFunctionCode**  
+* `lambda delete <file.lambda>` credentials needs permissions to **DeleteFunction**  
+* `lambda invoke <file.lambda>` credentials needs permissions to **InvokeFunction**  
 
-```
-// if installed globally then
-lambda deploy /path/to/my-function.lambda
 
-// if 'npm installed' without the -g then you must use the full path
-node_modules/.bin/lambda /path/to/my-function.lambda
-```
-
-## Sample .lambda file
-
- * PATH must point to your code folder and is relative to the .lambda file  
- * PATH can be relative or absolute  
- * If not set, Runtime defaults to **nodejs10.x**  
- * If not set, FunctionName defaults to the name of the config file without extension ("my-function" in this case)  
- * You can use **Ref** to reference environment variables in the form of env.YOUR_ENVIRONMENT_NAME  
- * `lambda deploy <file.lambda>` credentials needs permissions to **CreateFunction**, **UpdateFunctionConfiguration** and **UpdateFunctionCode**  
- * `lambda delete <file.lambda>` credentials needs permissions to **DeleteFunction**  
- * `lambda invoke <file.lambda>` credentials needs permissions to **InvokeFunction**  
-
+## Sample JSON config
 
 ```
-// Sample contents of my-function.lambda
+
 {
 	"PATH": "./test-function",
 	"AWS_KEY": { "Ref" : "env.AWS_ACCESS_KEY_ID" },,
@@ -70,7 +61,8 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 }
 ```
 
-You can also use yaml content,
+## Sample YAML config
+
 ```
 # unlike json, comments are allowed in yaml, yey!
 # remember to use spaces not tabs 😞
@@ -94,4 +86,28 @@ Tags:
     k1: v1
     k2: v2
 Description: ""
+```
+
+
+
+## Deploy from Local to AWS Lambda
+
+```
+// if installed globally then
+$ lambda deploy /path/to/my-function.lambda
+$ lambda deploy ../configs/my-function.lambda
+
+// if 'npm installed' without the -g then you must use the full path
+$ node_modules/.bin/lambda /path/to/my-function.lambda
+
+// you can also add it in your scripts section of your package.json scripts: { "deploy-func1": "lambda deploy ../config/func1.lambda" }
+$ npm run deploy-func1
+```
+
+## Watch config file
+
+aws-lambda can also watch the config file and the code folder specified in the config.PATH for changes and re-reploy on change
+
+```
+$ lambda start ../configs/my-function.lambda
 ```
