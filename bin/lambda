@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
 var
-dotenv = require( "dotenv" ),
 lambda = require( "../lib/main.js" ),
 program = require( "commander" );
 
-dotenv.load( );
 
 program
   .usage('deploy <file>')
