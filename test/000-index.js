@@ -1,5 +1,5 @@
 
-console.log("test version", process.version )
+
 exec = function( cmd, params, cb ) {
 	var spawn = require('child_process').spawn;
 	var prc = spawn( cmd,  params );
