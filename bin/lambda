@@ -31,4 +31,12 @@ program
 		lambda.invoke( prg );
 	});
 
+program
+	.usage('start <file>')
+	.command( "start <file>" )
+	.description( "start Function" )
+	.action( function( prg ) {
+		lambda.start( prg );
+	});
+
 program.parse( process.argv );
