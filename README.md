@@ -62,6 +62,10 @@ node_modules/.bin/lambda /path/to/my-function.lambda
 	"Layers": [
 		"arn:aws:lambda:eu-central-1:452980636694:layer:awspilot-dynamodb-2_0_0-beta:1"
 	],
+	"Tags": {
+		"k1": "v1",
+		"k2": "v2"
+	},
 	"Description": ""
 }
 ```
@@ -86,5 +90,8 @@ Environment:
         Hello: "World"
 Layers:
     - "arn:aws:lambda:eu-central-1:452980636694:layer:awspilot-dynamodb-2_0_0-beta:1"
+Tags:
+    k1: v1
+    k2: v2
 Description: ""
 ```
