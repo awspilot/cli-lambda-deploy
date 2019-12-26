@@ -1,3 +1,5 @@
+1.0.1
+- support for function Tags
 1.0.0
 - uses 2015-03-31 api version ( latest in dec.2019 )
 - support for yaml
