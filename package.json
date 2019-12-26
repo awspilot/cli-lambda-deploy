@@ -27,7 +27,7 @@
 	"dependencies": {
 		"aws-sdk": "*",
 		"js-yaml": "^3.13.1",
-		"commander": "^3.0.0",
+		"commander": "^4.0.1",
 		"dotenv": "^0.4.0"
 	},
 	"devDependencies": {
