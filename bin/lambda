@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
+const {spawn} = require('child_process');
+
 var
-lambda = require( "../lib/main.js" ),
-program = require( "commander" );
+	lambda = require( "../lib/main.js" ),
+	program = require( "commander" );
+
 program.version('1.0.1')
 
 program
@@ -30,10 +33,16 @@ program
 	});
 
 program
+	//.requiredOption
+	.option('--docker', 'start inside docker')
 	.usage('start <file>')
 	.command( "start <file>" )
 	.description( "start Function" )
 	.action( function( prg ) {
+		if (program.docker) {
+			const childProcess = spawn('cat', ['/etc/hosts'], {stdio: [process.stdin, process.stdout, process.stderr]});
+			return;
+		}
 		lambda.start( prg );
 	});
 
