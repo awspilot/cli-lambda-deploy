@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-const {spawn} = require('child_process');
-
 var
 	lambda = require( "../lib/main.js" ),
 	program = require( "commander" );
@@ -40,7 +38,7 @@ program
 	.description( "start Function" )
 	.action( function( prg ) {
 		if (program.docker) {
-			const childProcess = spawn('cat', ['/etc/hosts'], {stdio: [process.stdin, process.stdout, process.stderr]});
+			lambda.start_docker( prg )
 			return;
 		}
 		lambda.start( prg );
