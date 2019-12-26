@@ -33,6 +33,7 @@ Resources:
                    - 'lambda:UpdateFunctionCode'
                    - 'lambda:InvokeFunction'
                    - 'lambda:ListTags'
+                   - 'lambda:TagResource'
                    # old api
                    - 'lambda:UploadFunction'
                  Resource:
