@@ -17,7 +17,7 @@
 	"homepage": "https://awspilot.dev",
 	"bugs": "https://github.com/awspilot/cli-lambda-deploy/issues",
 	"repository": {
-		"type":  "git",
+		"type": "git",
 		"url": "https://github.com/awspilot/cli-lambda-deploy"
 	},
 	"main": "lib/main.js",
@@ -27,12 +27,9 @@
 	"dependencies": {
 		"aws-sdk": "*",
 		"js-yaml": "^3.13.1",
-		"commander": "^2.5.0",
+		"commander": "^3.0.0",
 		"dotenv": "^0.4.0"
 	},
-
-
-
 	"devDependencies": {
 		"mocha": "5.2.0"
 	},
