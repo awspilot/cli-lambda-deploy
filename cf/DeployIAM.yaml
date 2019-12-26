@@ -32,7 +32,7 @@ Resources:
                    - 'lambda:UpdateFunctionConfiguration'
                    - 'lambda:UpdateFunctionCode'
                    - 'lambda:InvokeFunction'
-
+                   - 'lambda:ListTags'
                    # old api
                    - 'lambda:UploadFunction'
                  Resource:
