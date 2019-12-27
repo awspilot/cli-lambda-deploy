@@ -28,7 +28,7 @@
 		"aws-sdk": "*",
 		"js-yaml": "^3.13.1",
 		"watchpack": "^1.6.0",
-		"commander": "^4.0.1"
+		"commander": "^3.0.2"
 	},
 	"devDependencies": {
 		"mocha": "5.2.0"
