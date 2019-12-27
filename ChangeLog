@@ -1,6 +1,9 @@
+1.0.2
+- better watch using watchpack ( used also by webpack )
+- $ lambda start --docker > in progress
 1.0.1
 - support for function Tags
-- # lambda start <file>
+- $ lambda start <file>
 1.0.0
 - uses 2015-03-31 api version ( latest in dec.2019 )
 - support for yaml
