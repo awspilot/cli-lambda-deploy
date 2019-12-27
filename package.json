@@ -27,6 +27,7 @@
 	"dependencies": {
 		"aws-sdk": "*",
 		"js-yaml": "^3.13.1",
+		"watchpack": "^1.6.0",
 		"commander": "^4.0.1"
 	},
 	"devDependencies": {
