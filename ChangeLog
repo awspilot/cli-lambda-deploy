@@ -1,5 +1,6 @@
-1.0.3
+1.0.4
 - better watch using watchpack ( used also by webpack )
+- try webpack 2.0.0-beta.10; webpack 1.x does not seem to work inside linux
 - $ lambda start --docker > in progress
 1.0.1
 - support for function Tags
