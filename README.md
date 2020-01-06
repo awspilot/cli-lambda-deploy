@@ -8,6 +8,10 @@ Command line tool deploy code to [AWS Lambda](http://aws.amazon.com/lambda/).
 [![Downloads](https://img.shields.io/npm/dy/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
 [![Downloads](https://img.shields.io/npm/dt/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
 
+### Notes
+
+Versions prior to 1.0.5 suffer from "Command Injection" vulnerability,  
+thanks [snyk.io](https://snyk.io/vuln) and [Song Li](http://songli.io) of Johns Hopkins University for reporting.
 
 ## Installation
 
