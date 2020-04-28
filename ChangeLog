@@ -1,5 +1,6 @@
 
-
+1.0.6
+- increasex maxBuffer for exec from 1MB to 5MB
 1.0.5
 - fixes a vulnerability in function name, reported by Song Li of Johns Hopkins University
 1.0.4
