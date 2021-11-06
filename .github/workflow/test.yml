@@ -1,0 +1,55 @@
+
+name: npm test
+
+on:
+    push:
+        branches:
+          - master
+          - main
+        # temporary disable until build workflow is configured properly
+        # branches-ignore:
+        #   - '**'
+        paths:
+          #- 'dist/**'
+          - '**'
+jobs:
+
+    test:
+        runs-on: ubuntu-latest
+
+        strategy:
+            max-parallel: 4
+            matrix:
+                node-version:
+                   - 8.x
+                  #  - 10.x
+                  #  - 12.x
+                  #  - 14.x
+                include:
+                    - node-version: 8.x
+                      region: "us-east-1"
+                    # - node-version: 10.x
+                    #   region: "us-east-2"
+                    # - node-version: 12.x
+                    #   region: "us-west-1"
+                    # - node-version: 14.x
+                    #   region: "us-west-2"
+        steps:
+        - uses: actions/checkout@v2
+        - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
+
+        - run: npm install
+        # peer dependency
+        #- run: npm install aws-sdk
+        #- run: npm run build --if-present
+        -
+          shell: bash
+          run: CI=true npm test
+          env:
+              AWS_ACCESS_KEY_ID: AKIAWS5577QLD5TL6AZN
+              AWS_SECRET_ACCESS_KEY: ${{ secrets.KEYSECRET_AKIAWS5577QLD5TL6AZN }}
+              AWS_REGION: ${{ matrix.region }}
+              CI: true
