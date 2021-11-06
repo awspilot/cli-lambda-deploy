@@ -3,7 +3,8 @@
 # cli-lambda-deploy
 Command line tool deploy code to [AWS Lambda](http://aws.amazon.com/lambda/).  
 
-[![Build Status](https://travis-ci.org/awspilot/cli-lambda-deploy.svg?branch=master)](https://travis-ci.org/awspilot/cli-lambda-deploy)
+
+[![npm test](https://github.com/awspilot/cli-lambda-deploy/actions/workflows/test.yml/badge.svg)](https://github.com/awspilot/cli-lambda-deploy/actions/workflows/test.yml)
 [![Downloads](https://img.shields.io/npm/dm/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
 [![Downloads](https://img.shields.io/npm/dy/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
 [![Downloads](https://img.shields.io/npm/dt/aws-lambda?maxAge=2592000)](https://www.npmjs.com/package/aws-lambda)
