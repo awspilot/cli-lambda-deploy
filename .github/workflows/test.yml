@@ -25,7 +25,7 @@ jobs:
                    - 12.x
                    - 14.x
                 include:
-                    - node-version: 12.x
+                    - node-version: 10.x
                       region: "us-east-1"
                     - node-version: 12.x
                       region: "us-east-1"
