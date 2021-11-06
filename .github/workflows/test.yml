@@ -21,13 +21,16 @@ jobs:
             max-parallel: 1
             matrix:
                 node-version:
+                   - 10.x
                    - 12.x
                    - 14.x
                 include:
                     - node-version: 12.x
-                      region: "us-west-1"
+                      region: "us-east-1"
+                    - node-version: 12.x
+                      region: "us-east-1"
                     - node-version: 14.x
-                      region: "us-west-2"
+                      region: "us-east-2"
         steps:
         - uses: actions/checkout@v2
         - name: Use Node.js ${{ matrix.node-version }}
