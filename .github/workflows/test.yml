@@ -22,9 +22,8 @@ jobs:
             matrix:
                 node-version:
                    - 8.x
-                  #  - 10.x
                    - 12.x
-                  #  - 14.x
+                   - 14.x
                 include:
                     - node-version: 8.x
                       region: "us-east-1"
@@ -32,8 +31,8 @@ jobs:
                     #   region: "us-east-2"
                     - node-version: 12.x
                       region: "us-west-1"
-                    # - node-version: 14.x
-                    #   region: "us-west-2"
+                    - node-version: 14.x
+                      region: "us-west-2"
         steps:
         - uses: actions/checkout@v2
         - name: Use Node.js ${{ matrix.node-version }}
