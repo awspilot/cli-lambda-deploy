@@ -31,9 +31,11 @@
 		"commander": "^3.0.2"
 	},
 	"devDependencies": {
+		"eslint": "^8.2.0",
 		"mocha": "5.2.0"
 	},
 	"scripts": {
-		"test": "mocha --timeout 100000 -S -R spec --exit"
+		"test": "mocha --timeout 100000 -S -R spec --exit",
+		"lint": "eslint lib"
 	}
 }
