@@ -25,7 +25,7 @@
 		"lambda": "./bin/lambda"
 	},
 	"dependencies": {
-		"aws-sdk": "*",
+		"aws-sdk": "^2.814.0",
 		"js-yaml": "^3.14.1",
 		"watchpack": "^2.0.0-beta.10",
 		"commander": "^3.0.2"
