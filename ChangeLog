@@ -1,4 +1,5 @@
-
+1.0.7
+- eslint + upgraded dependencies
 1.0.6
 - increasex maxBuffer for exec from 1MB to 5MB
 1.0.5
