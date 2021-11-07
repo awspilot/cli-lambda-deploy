@@ -5,4 +5,5 @@ cf/
 docker/
 ChangeLog
 .travis.yml
+.eslintrc.yml
 .env
