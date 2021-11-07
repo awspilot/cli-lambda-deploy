@@ -26,7 +26,7 @@
 	},
 	"dependencies": {
 		"aws-sdk": "*",
-		"js-yaml": "^3.13.1",
+		"js-yaml": "^4.1.0",
 		"watchpack": "^2.0.0-beta.10",
 		"commander": "^3.0.2"
 	},
