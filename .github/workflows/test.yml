@@ -54,20 +54,28 @@ jobs:
 
     tag:
       name: Tag
+      needs: test
       runs-on: ubuntu-latest
       steps:
         - name: checkout
           uses: actions/checkout@v2
-        - name: setup Node
-          uses: actions/setup-node@v2
-        - name: package-version-to-git-tag
-          uses: pkgdeps/git-tag-action@v2
+        - uses: Klemensas/action-autotag@stable
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            github_repo: ${{ github.repository }}
-            git_commit_sha: ${{ github.sha }}
-            #version: "1.0.0"
-            git_tag_prefix: "v"
+            GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+            tag_prefix: "v"
+            #tag_suffix: " (beta)"
+            #tag_message: "Custom message goes here."
+
+        #- name: setup Node
+        #  uses: actions/setup-node@v2
+        # - name: package-version-to-git-tag
+        #   uses: pkgdeps/git-tag-action@v2
+        #   with:
+        #     github_token: ${{ secrets.GITHUB_TOKEN }}
+        #     github_repo: ${{ github.repository }}
+        #     git_commit_sha: ${{ github.sha }}
+        #     #version: "1.0.0"
+        #     git_tag_prefix: "v"
 
 
     # publish if the version number in package.json differs from the latest on NPM
