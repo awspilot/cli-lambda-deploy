@@ -50,3 +50,22 @@ jobs:
               AWS_SECRET_ACCESS_KEY: ${{ secrets.KEYSECRET_AKIAWS5577QLD5TL6AZN }}
               AWS_REGION: ${{ matrix.region }}
               CI: true
+
+
+    # publish if the version number in package.json differs from the latest on NPM
+    publish:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Use Node.js 10
+          uses: actions/setup-node@v1
+          with:
+            node-version: 10
+
+        - run: npm install
+        - run: npm test
+        - uses: JS-DevTools/npm-publish@v1
+          with:
+            token: ${{ secrets.NPM_TOKEN }}
+            access: public
