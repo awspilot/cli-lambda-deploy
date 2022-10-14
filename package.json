@@ -6,7 +6,7 @@
 		"email": "adrian@databank.io",
 		"url": "https://awspilot.dev"
 	},
-	"name": "cli-aws-lambda",
+	"name": "cli-lambda-deploy",
 	"description": "Deploy AWS Lambda functions from command line using a json or yaml config file.",
 	"keywords": [
 		"lambda",
